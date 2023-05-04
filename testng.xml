@@ -8,6 +8,4 @@
             <class name="scripts.LoginTest"/>
         </classes>
     </test>
-
-
 </suite>
