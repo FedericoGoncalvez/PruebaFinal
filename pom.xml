@@ -51,7 +51,7 @@
       <version>2.13.3</version>
     </dependency>
   </dependencies>
-
+<!--
   <build>
     <plugins>
       <plugin>
@@ -74,5 +74,5 @@
         </configuration>
       </plugin>
     </plugins>
-  </build>
+  </build>-->
 </project>
