@@ -29,13 +29,13 @@ public class RegisterPage extends BasePage {
 
     public MyAccountPage register(String name, String lastname,
                                   String email, String password,
-                                  String confirmpasword){
+                                  String confirmpassword){
 
         firstNameInput.sendKeys(name);
         lastNameInput.sendKeys(lastname);
         emailInput.sendKeys(email);
         passwordInput.sendKeys(password);
-        confirmPasswordInput.sendKeys(confirmpasword);
+        confirmPasswordInput.sendKeys(confirmpassword);
 
         registerButton.click();
         return new MyAccountPage(driver);
