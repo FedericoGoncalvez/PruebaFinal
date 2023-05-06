@@ -12,18 +12,18 @@ public class LoginPage extends BasePage{
     }
 
     @FindBy(id = "email")
-    WebElement emailForm;
+    WebElement emailInput;
 
     @FindBy(id = "pass")
-    WebElement passwordForm;
+    WebElement passwordInput;
 
     @FindBy(id = "send2")
     WebElement loginButton;
 
     //@Step("Se ingresan los datos del Login.")
     public MyAccountPage enterMyAccount(String emailAccount, String passAccount){
-        emailForm.sendKeys(emailAccount);
-        passwordForm.sendKeys(passAccount);
+        emailInput.sendKeys(emailAccount);
+        passwordInput.sendKeys(passAccount);
         loginButton.click();
         return new MyAccountPage(driver);
     }
