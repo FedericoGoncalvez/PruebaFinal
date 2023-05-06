@@ -4,7 +4,7 @@ package scripts;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.AccountLoginPage;
-import pages.LoginPage;
+import pages.MainPage;
 import pages.MyAccountPage;
 
 import static org.testng.Assert.assertEquals;
@@ -18,7 +18,7 @@ public class LoginTest extends BaseTest{
 
 
         driver.get("http://magento-demo.lexiconn.com/");
-        LoginPage loginPage = new LoginPage(driver);
+        MainPage loginPage = new MainPage(driver);
         AccountLoginPage accountLoginPage = loginPage.enterLoginPage();
         MyAccountPage myAccountPage = accountLoginPage.enterMyAccount(email,password);
         String getTitle = myAccountPage.assertLoginPage();
