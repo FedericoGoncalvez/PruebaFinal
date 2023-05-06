@@ -7,7 +7,7 @@
         <classes>
             <class name="scripts.LoginTest"/>
         </classes>
-    </test> -->
+    </test>
 
     <test name="Parametrized Test 1">
         <parameter name="name" value="xyz@test.com" />
@@ -17,6 +17,14 @@
         <parameter name="confirm" value="123456" />
         <classes>
             <class name="scripts.RegisterTest"/>
+        </classes>
+    </test>-->
+
+    <test name="Parametrized Test 2">
+        <parameter name="language" value="French" />
+        <parameter name="text" value="votre langue:" />
+        <classes>
+            <class name="scripts.ChangeLanguageTest"/>
         </classes>
     </test>
 </suite>
