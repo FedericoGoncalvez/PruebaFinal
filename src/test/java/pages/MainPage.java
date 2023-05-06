@@ -26,7 +26,7 @@ public class MainPage extends BasePage{
         loginButton.click();
         return new LoginPage(driver);
     }
-    //@Step("Se ingresa a la página de Login.")
+    //@Step("Se ingresa a la página de Registro.")
     public RegisterPage enterRegisterPage(){
         accountButton.click();
         registerButton.click();
