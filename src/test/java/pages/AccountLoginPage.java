@@ -23,8 +23,8 @@ public class AccountLoginPage extends BasePage{
 
     //@Step("Se ingresan los datos del Login.")
     public MyAccountPage enterMyAccount(String emailAccount, String passAccount){
-        emailForm.sendKeys("xyz@test.com");
-        passwordForm.sendKeys("123456");
+        emailForm.sendKeys(emailAccount);
+        passwordForm.sendKeys(passAccount);
         loginButton.click();
         return new MyAccountPage(driver);
     }
