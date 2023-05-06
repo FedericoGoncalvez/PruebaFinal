@@ -18,9 +18,11 @@ public class LoginTest extends BaseTest{
 
 
         driver.get("http://magento-demo.lexiconn.com/");
-        MainPage loginPage = new MainPage(driver);
-        LoginPage accountLoginPage = loginPage.enterLoginPage();
+
+        MainPage home = new MainPage(driver);
+        LoginPage accountLoginPage = home.enterLoginPage();
         MyAccountPage myAccountPage = accountLoginPage.enterMyAccount(email,password);
+
         String getTitle = myAccountPage.assertLoginPage();
         String title = myAccountPage.titlePage();
         assertEquals(title,getTitle);
