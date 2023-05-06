@@ -4,13 +4,20 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class MainPage extends BasePage{
+public class MainPage {
+    public WebDriver driver;
 
-    public MainPage(WebDriver driver) {
-        super(driver);
+    public MainPage(WebDriver driver){
+        this.driver = driver;
+        PageFactory.initElements(driver,this);
     }
 
+    @FindBy(css = "button[title='Search']")
+    private WebElement searchButton;
+    @FindBy(id="search")
+    private WebElement searchInput;
     @FindBy(id = "select-language")
     private WebElement languageDropbox;
     @FindBy(xpath = "//option[contains(text(), 'French')]")
@@ -53,4 +60,11 @@ public class MainPage extends BasePage{
     public String getElementText() {
         return labelLangue.getText();
     }
+
+    public void setSearch(String text) {
+        searchInput.sendKeys(text);
+        searchButton.click();
+    }
+
+
 }

@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class RegisterPage extends BasePage {
+public class RegisterPage extends MainPage {
     public RegisterPage(WebDriver driver) {
         super(driver);
     }
@@ -45,8 +45,7 @@ public class RegisterPage extends BasePage {
     }
 
     public String assertAdvice(){
-        String getAdvice= advice.getText();
-        return getAdvice;
+        return advice.getText();
     }
 }
 
