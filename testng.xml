@@ -28,12 +28,18 @@
             <classes>
                 <class name="scripts.ChangeLanguageTest"/>
             </classes>
-        </test>-->
+        </test>
     <test name="Parametrized Test 4">
         <parameter name="textSearch" value="123" />
         <parameter name="textResult" value="Your search returns no results." />
         <classes>
             <class name="scripts.SearchTest"/>
+        </classes>
+    </test>-->
+    <test name="Parametrized Test 5">
+        <parameter name="textExpected" value="Retro Chic Eyeglasses was added to your shopping cart." />
+        <classes>
+            <class name="scripts.ShoppingCartTest"/>
         </classes>
     </test>
 
