@@ -2,9 +2,7 @@ package scripts;
 
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pages.LoginPage;
 import pages.MainPage;
-import pages.MyAccountPage;
 import pages.SearchPage;
 
 import static org.testng.Assert.assertEquals;
