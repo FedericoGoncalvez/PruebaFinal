@@ -27,7 +27,10 @@ public class RegisterPage extends BasePage {
     @FindBy(xpath = "//button[@title='Register']")
     private WebElement registerButton;
 
-    public MyAccountPage register(String name, String lastname,
+    @FindBy(id = "advice-required-entry-email_address")
+    private WebElement advice;
+
+    public void register(String name, String lastname,
                                   String email, String password,
                                   String confirmpassword){
 
@@ -38,10 +41,13 @@ public class RegisterPage extends BasePage {
         confirmPasswordInput.sendKeys(confirmpassword);
 
         registerButton.click();
-        return new MyAccountPage(driver);
+
     }
 
-
+    public String assertAdvice(){
+        String getAdvice= advice.getText();
+        return getAdvice;
+    }
 }
 
 
