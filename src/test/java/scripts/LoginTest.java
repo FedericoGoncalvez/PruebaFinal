@@ -3,7 +3,7 @@ package scripts;
 
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pages.AccountLoginPage;
+import pages.LoginPage;
 import pages.MainPage;
 import pages.MyAccountPage;
 
@@ -19,7 +19,7 @@ public class LoginTest extends BaseTest{
 
         driver.get("http://magento-demo.lexiconn.com/");
         MainPage loginPage = new MainPage(driver);
-        AccountLoginPage accountLoginPage = loginPage.enterLoginPage();
+        LoginPage accountLoginPage = loginPage.enterLoginPage();
         MyAccountPage myAccountPage = accountLoginPage.enterMyAccount(email,password);
         String getTitle = myAccountPage.assertLoginPage();
         String title = myAccountPage.titlePage();

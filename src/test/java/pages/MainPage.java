@@ -18,9 +18,9 @@ public class MainPage extends BasePage{
     WebElement loginButton;
 
     //@Step("Se ingresa a la página de Login.")
-    public AccountLoginPage enterLoginPage(){
+    public LoginPage enterLoginPage(){
         accountButton.click();
         loginButton.click();
-        return new AccountLoginPage(driver);
+        return new LoginPage(driver);
     }
 }
