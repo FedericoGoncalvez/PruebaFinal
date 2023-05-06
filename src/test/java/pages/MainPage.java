@@ -11,11 +11,19 @@ public class MainPage extends BasePage{
         super(driver);
     }
 
+    @FindBy(id = "select-language")
+    private WebElement languageDropbox;
+    @FindBy(xpath = "//option[contains(text(), 'French')]")
+    private WebElement frenchLanguageOption;
+
+    @FindBy(xpath="//label[text()='Votre Langue:']")
+    private WebElement labelLangue;
+
     @FindBy(xpath = "//span[@class='label' and text()='Account']")
-    WebElement accountButton;
+    private WebElement accountButton;
 
     @FindBy(css = "[title='Log In']")
-    WebElement loginButton;
+    private WebElement loginButton;
 
     @FindBy(css = "[title='Register']")
     WebElement registerButton;
@@ -31,5 +39,18 @@ public class MainPage extends BasePage{
         accountButton.click();
         registerButton.click();
         return new RegisterPage(driver);
+    }
+
+    public void changeLanguage(){
+        languageDropbox.click();
+    }
+
+    public void selectLanguage(String language) {
+        if (language.equals("French")) {
+            frenchLanguageOption.click();
+        }
+    }
+    public String getElementText() {
+        return labelLangue.getText();
     }
 }
