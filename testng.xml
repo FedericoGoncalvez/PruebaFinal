@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Parametrized test Suite" verbose="1">
     <test name="Parametrized Test">
-        <parameter name="emailAccount" value="xyz@test.com" />
-        <parameter name="passAccount" value="123456" />
+        <parameter name="email" value="xyz@test.com" />
+        <parameter name="password" value="123456" />
         <classes>
             <class name="scripts.LoginTest"/>
         </classes>

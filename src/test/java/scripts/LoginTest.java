@@ -11,16 +11,16 @@ import static org.testng.Assert.assertEquals;
 
 
 public class LoginTest extends BaseTest{
-
-    @Parameters({"emailAccount","passAccount"})
+    @Parameters({"email","password"})
 
     @Test
-    public void test(String emailAccount, String passAccount){
+    public void test(String email, String password){
 
-        driver.get("http://magento-demo.lexiconn.com/");
+        String site = "http://magento-demo.lexiconn.com/";
+        driver.get(site);
         LoginPage loginPage = new LoginPage(driver);
         AccountLoginPage accountLoginPage = loginPage.enterLoginPage();
-        MyAccountPage myAccountPage = accountLoginPage.enterMyAccount(emailAccount,passAccount);
+        MyAccountPage myAccountPage = accountLoginPage.enterMyAccount(email,password);
         String getTitle = myAccountPage.assertLoginPage();
         String title = myAccountPage.titlePage();
         assertEquals(title,getTitle);
