@@ -5,23 +5,23 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.MainPage;
 import pages.MyAccountPage;
+import pages.SearchPage;
 
 import static org.testng.Assert.assertEquals;
 
 public class SearchTest extends BaseTest{
 
-    @Parameters({"text"})
+    @Parameters({"textSearch", "textResult"})
 
     @Test
-    public void Test(String text){
+    public void Test(String textSearch, String textResult){
 
         driver.get("http://magento-demo.lexiconn.com/");
 
         MainPage home = new MainPage(driver);
-        home.setSearch(text);
-        /*home.selectLanguage(language);
-        String pageLanguage = home.getElementText();
-        assertEquals(text,
-                pageLanguage.toLowerCase());
-    */}
+        home.setSearch(textSearch);
+        SearchPage searchPage = new SearchPage(driver);
+        String result = searchPage.getText();
+        assertEquals(result, textResult);
+    }
 }

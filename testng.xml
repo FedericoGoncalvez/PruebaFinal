@@ -30,7 +30,8 @@
             </classes>
         </test>-->
     <test name="Parametrized Test 4">
-        <parameter name="text" value="123" />
+        <parameter name="textSearch" value="123" />
+        <parameter name="textResult" value="Your search returns no results." />
         <classes>
             <class name="scripts.SearchTest"/>
         </classes>
