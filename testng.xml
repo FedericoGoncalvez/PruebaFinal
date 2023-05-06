@@ -1,10 +1,22 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Parametrized test Suite" verbose="1">
-    <test name="Parametrized Test">
+    <!--
+    <test name="Parametrized Test 0">
         <parameter name="email" value="xyz@test.com" />
         <parameter name="password" value="123456" />
         <classes>
             <class name="scripts.LoginTest"/>
+        </classes>
+    </test> -->
+
+    <test name="Parametrized Test 1">
+        <parameter name="name" value="xyz@test.com" />
+        <parameter name="lastname" value="xyz@test.com" />
+        <parameter name="email" value="" />
+        <parameter name="password" value="123456" />
+        <parameter name="confirm" value="123456" />
+        <classes>
+            <class name="scripts.RegisterTest"/>
         </classes>
     </test>
 </suite>
