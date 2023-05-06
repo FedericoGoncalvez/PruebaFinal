@@ -16,15 +16,15 @@ public class LoginTest extends BaseTest{
     @Test
     public void test(String email, String password){
 
-        String site = "http://magento-demo.lexiconn.com/";
-        driver.get(site);
+
+        driver.get("http://magento-demo.lexiconn.com/");
         LoginPage loginPage = new LoginPage(driver);
         AccountLoginPage accountLoginPage = loginPage.enterLoginPage();
-        /*MyAccountPage myAccountPage = accountLoginPage.enterMyAccount(email,password);
+        MyAccountPage myAccountPage = accountLoginPage.enterMyAccount(email,password);
         String getTitle = myAccountPage.assertLoginPage();
         String title = myAccountPage.titlePage();
         assertEquals(title,getTitle);
-        myAccountPage.returnHomePage();*/
+        myAccountPage.returnHomePage();
 
 
     }

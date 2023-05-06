@@ -32,7 +32,7 @@ public class MyAccountPage extends BasePage{
     //@Step("Se pasa el título para realizar el assert.")
     public String titlePage(){
 
-        String title = "Hello, Test Account!";
+        String title = "Hello, holamundo lasttest!";
         return title;
 
     }
