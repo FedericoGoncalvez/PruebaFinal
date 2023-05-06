@@ -15,32 +15,18 @@ public class MyAccountPage extends BasePage{
     }
 
 
+    @FindBy(tagName = "h1")
+    private WebElement dashboardTitle;
     @FindBy(className = "hello")
-    WebElement assertLogin;
+    private WebElement loginName;
 
-    @FindBy(className = "logo")
-    WebElement homePageButton;
 
     //@Step("Se obtiene el título para realizar el assert.")
-    public String assertLoginPage(){
-
-        String getTitle = assertLogin.getText();
-        return getTitle;
-
+    public String getTextToDashboard(){
+        return dashboardTitle.getText();
     }
-
-    //@Step("Se pasa el título para realizar el assert.")
-    public String titlePage(){
-
-        String title = "Hello, holamundo lasttest!";
-        return title;
-
-    }
-
-    //@Step("Se regresa a la HomePage.")
-    public void returnHomePage(){
-
-        homePageButton.click();
+    public String getName() {
+        return loginName.getText();
     }
 
 }
