@@ -1,6 +1,6 @@
 package pages;
 
-import io.qameta.allure.Step;
+//import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,10 +21,10 @@ public class AccountLoginPage extends BasePage{
     @FindBy(id = "send2")
     WebElement loginButton;
 
-    @Step("Se ingresan los datos del Login.")
+    //@Step("Se ingresan los datos del Login.")
     public MyAccountPage enterMyAccount(String emailAccount, String passAccount){
-        emailForm.sendKeys("testaccount@gmail.com");
-        passwordForm.sendKeys("testaccount!1");
+        emailForm.sendKeys("xyz@test.com");
+        passwordForm.sendKeys("123456");
         loginButton.click();
         return new MyAccountPage(driver);
     }

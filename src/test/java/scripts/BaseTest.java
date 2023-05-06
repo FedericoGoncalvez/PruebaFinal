@@ -1,7 +1,7 @@
 package scripts;
 
 
-import io.qameta.allure.Attachment;
+//import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +18,7 @@ public class BaseTest {
     public static WebDriver driver;
 
     @BeforeClass
-    public static void setUp() throws Exception{
+    public void setUp() throws Exception{
 
         System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
         driver = new ChromeDriver();
@@ -38,10 +38,10 @@ public class BaseTest {
             System.out.println("Exception while taking screenshot " + e.getMessage());
         }
         return image;
-    }*/
+    }
 
     @AfterTest
     public void afterTest(){
         driver.quit();
-    }
+    }*/
 }

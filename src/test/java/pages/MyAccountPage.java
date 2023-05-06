@@ -1,6 +1,6 @@
 package pages;
 
-import io.qameta.allure.Step;
+//import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,7 +21,7 @@ public class MyAccountPage extends BasePage{
     @FindBy(className = "logo")
     WebElement homePageButton;
 
-    @Step("Se obtiene el título para realizar el assert.")
+    //@Step("Se obtiene el título para realizar el assert.")
     public String assertLoginPage(){
 
         String getTitle = assertLogin.getText();
@@ -29,7 +29,7 @@ public class MyAccountPage extends BasePage{
 
     }
 
-    @Step("Se pasa el título para realizar el assert.")
+    //@Step("Se pasa el título para realizar el assert.")
     public String titlePage(){
 
         String title = "Hello, Test Account!";
@@ -37,7 +37,7 @@ public class MyAccountPage extends BasePage{
 
     }
 
-    @Step("Se regresa a la HomePage.")
+    //@Step("Se regresa a la HomePage.")
     public void returnHomePage(){
 
         homePageButton.click();

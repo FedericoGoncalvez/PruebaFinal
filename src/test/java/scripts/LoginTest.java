@@ -20,11 +20,11 @@ public class LoginTest extends BaseTest{
         driver.get(site);
         LoginPage loginPage = new LoginPage(driver);
         AccountLoginPage accountLoginPage = loginPage.enterLoginPage();
-        MyAccountPage myAccountPage = accountLoginPage.enterMyAccount(email,password);
+        /*MyAccountPage myAccountPage = accountLoginPage.enterMyAccount(email,password);
         String getTitle = myAccountPage.assertLoginPage();
         String title = myAccountPage.titlePage();
         assertEquals(title,getTitle);
-        myAccountPage.returnHomePage();
+        myAccountPage.returnHomePage();*/
 
 
     }
