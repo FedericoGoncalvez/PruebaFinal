@@ -11,7 +11,7 @@ public class LoginPage extends BasePage{
         super(driver);
     }
 
-    @FindBy(css = "a.skip-account span.label")
+    @FindBy(xpath = "//span[@class='label' and text()='Account']")
     WebElement accountButton;
 
     @FindBy(css = "[title='Log In']")
