@@ -27,6 +27,20 @@ public class RegisterPage extends BasePage {
     @FindBy(xpath = "//button[@title='Register']")
     private WebElement registerButton;
 
+    public MyAccountPage register(String name, String lastname,
+                                  String email, String password,
+                                  String confirmpasword){
+
+        firstNameInput.sendKeys(name);
+        lastNameInput.sendKeys(lastname);
+        emailInput.sendKeys(email);
+        passwordInput.sendKeys(password);
+        confirmPasswordInput.sendKeys(confirmpasword);
+
+        registerButton.click();
+        return new MyAccountPage(driver);
+    }
+
 
 }
 
