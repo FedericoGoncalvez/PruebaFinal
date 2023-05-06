@@ -17,10 +17,19 @@ public class MainPage extends BasePage{
     @FindBy(css = "[title='Log In']")
     WebElement loginButton;
 
+    @FindBy(css = "[title='Register']")
+    WebElement registerButton;
+
     //@Step("Se ingresa a la página de Login.")
     public LoginPage enterLoginPage(){
         accountButton.click();
         loginButton.click();
         return new LoginPage(driver);
+    }
+    //@Step("Se ingresa a la página de Login.")
+    public RegisterPage enterRegisterPage(){
+        accountButton.click();
+        registerButton.click();
+        return new RegisterPage(driver);
     }
 }
