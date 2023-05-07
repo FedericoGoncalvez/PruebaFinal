@@ -5,28 +5,40 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage extends MainPage {
+public class LoginPage extends BasePage {
 
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
+    @FindBy(xpath = "//span[@class='label' and text()='Account']")
+    private WebElement account;
+
+    @FindBy(css = "[title='Log In']")
+    private WebElement login;
     @FindBy(id = "email")
-    WebElement emailInput;
+    private WebElement emailInput;
 
     @FindBy(id = "pass")
-    WebElement passwordInput;
+    private WebElement passwordInput;
 
     @FindBy(id = "send2")
-    WebElement loginButton;
+    private WebElement loginButton;
+
+
+    public void accountClick(){
+        account.click();
+    }
+    public void loginClick(){
+        login.click();
+    }
 
     //@Step("Se ingresan los datos del Login.")
-    public MyAccountPage enterMyAccount(String emailAccount, String passAccount){
+    public AccountPage enterMyAccount(String emailAccount, String passAccount){
         emailInput.sendKeys(emailAccount);
         passwordInput.sendKeys(passAccount);
         loginButton.click();
-        return new MyAccountPage(driver);
+        return new AccountPage(driver);
     }
-
 
 }

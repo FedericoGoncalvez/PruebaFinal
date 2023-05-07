@@ -5,11 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static org.testng.Assert.assertEquals;
+public class AccountPage extends BasePage {
 
-public class MyAccountPage extends MainPage {
-
-    public MyAccountPage(WebDriver driver) {
+    public AccountPage(WebDriver driver) {
         super(driver);
     }
 
@@ -19,8 +17,6 @@ public class MyAccountPage extends MainPage {
     @FindBy(className = "hello")
     private WebElement loginName;
 
-
-    //@Step("Se obtiene el título para realizar el assert.")
     public String getTextToDashboard(){
         return dashboardTitle.getText();
     }

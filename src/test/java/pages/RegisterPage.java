@@ -4,10 +4,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class RegisterPage extends MainPage {
+public class RegisterPage extends BasePage {
     public RegisterPage(WebDriver driver) {
         super(driver);
     }
+
+
+    @FindBy(xpath = "//span[@class='label' and text()='Account']")
+    private WebElement account;
+
+    @FindBy(css = "[title='Register']")
+    private WebElement register;
 
     @FindBy(xpath = "//input[@id='firstname']")
     private WebElement firstNameInput;
@@ -30,6 +37,13 @@ public class RegisterPage extends MainPage {
     @FindBy(id = "advice-required-entry-email_address")
     private WebElement advice;
 
+    public void accountClick(){
+        account.click();
+    }
+    public void registerClick(){
+        register.click();
+    }
+
     public void register(String name, String lastname,
                                   String email, String password,
                                   String confirmpassword){
@@ -47,6 +61,10 @@ public class RegisterPage extends MainPage {
     public String assertAdvice(){
         return advice.getText();
     }
+
+
+
+
 }
 
 
