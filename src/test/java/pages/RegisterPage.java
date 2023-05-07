@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,15 +29,16 @@ public class RegisterPage extends BasePage {
     private WebElement registerButton;
     @FindBy(id = "advice-required-entry-email_address")
     private WebElement advice;
-    //@Step("Se hace clic en el botón de account.")
+
+    @Step("Se hace clic en el botón de account.")
     public void accountClick(){
         account.click();
     }
-    //@Step("Se hace clic en registrarse.")
+    @Step("Se hace clic en registrarse.")
     public void registerClick(){
         register.click();
     }
-    //@Step("Se llenan los campos de registrar.")
+    @Step("Se llenan los campos de registrar.")
     public void register(String name, String lastname,
                                   String email, String password,
                                   String confirmpassword){
@@ -50,7 +52,7 @@ public class RegisterPage extends BasePage {
         registerButton.click();
 
     }
-    //@Step("Se retorna el mensaje de alerta del campo.")
+    @Step("Se retorna el mensaje de alerta del campo.")
     public String assertAdvice(){
         return advice.getText();
     }

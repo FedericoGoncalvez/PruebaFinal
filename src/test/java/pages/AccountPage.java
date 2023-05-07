@@ -1,6 +1,6 @@
 package pages;
 
-//import io.qameta.allure.Step;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,11 +20,11 @@ public class AccountPage extends BasePage {
 
 
 
-    //@Step("Se hace Logout.")
+    @Step("Se hace Logout.")
     public void logoutClick(){
         logout.click();
     }
-    //@Step("Se extrae la bienvenida.")
+    @Step("Se extrae la bienvenida.")
     public String getTextToDashboard(){
         return dashboardTitle.getText();
     }

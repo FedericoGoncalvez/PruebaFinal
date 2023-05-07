@@ -1,6 +1,6 @@
 package pages;
 
-//import io.qameta.allure.Step;
+import io.qameta.allure.Step;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -28,19 +28,19 @@ public class LoginPage extends BasePage {
 
 
 
-    //@Step("Se verifica el mensaje de error.")
+    @Step("Se verifica el mensaje de error.")
     public String getErrorText(){
         return errorMsg.getText();
     }
-    //@Step("Se hace clic en el boton account.")
+    @Step("Se hace clic en el boton account.")
     public void accountClick(){
         account.click();
     }
-    //@Step("Se hace clic en login.")
+    @Step("Se hace clic en login.")
     public void loginClick(){
         login.click();
     }
-    //@Step("Se hace el ingreso a la pagina.")
+    @Step("Se hace el ingreso a la pagina.")
     public AccountPage enterAccount(String emailAccount, String passAccount){
         emailInput.sendKeys(emailAccount);
         passwordInput.sendKeys(passAccount);
@@ -48,7 +48,7 @@ public class LoginPage extends BasePage {
         return new AccountPage(driver);
     }
 
-    //@Step("Se verifica si un elemento existe.")
+    @Step("Se verifica si un elemento existe.")
     public boolean isPresent() {
         try {
             logout.isDisplayed();

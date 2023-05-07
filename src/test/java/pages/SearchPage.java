@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,12 +16,12 @@ public class SearchPage extends BasePage {
     @FindBy(className = "note-msg")
     private WebElement searchResult;
 
-    //@Step("Se camptura el resultado de la busqueda.")
+    @Step("Se camptura el resultado de la busqueda.")
     public String getText() {
         return searchResult.getText();
     }
 
-    //@Step("Se llena y se hace clic en buscar.")
+    @Step("Se llena y se hace clic en buscar.")
     public void setSearch(String text) {
         searchInput.sendKeys(text);
         searchButton.click();

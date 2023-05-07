@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,18 +20,18 @@ public class LanguagePage extends BasePage {
 
 
 
-    //@Step("Se accede a lenguages.")
+    @Step("Se accede a lenguages.")
     public void changeLanguage(){
         languageDropbox.click();
     }
 
-    //@Step("Se selecciona el Frances.")
+    @Step("Se selecciona el Frances.")
     public void selectLanguage(String language) {
         if (language.equals("French")) {
             frenchLanguageOption.click();
         }
     }
-    //@Step("Se hace Logout.")
+    @Step("Se hace Logout.")
     public String getElementText() {
         return labelLangue.getText();
     }

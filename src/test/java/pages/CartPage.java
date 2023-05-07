@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,7 +14,7 @@ public class CartPage extends BasePage {
     @FindBy(className = "success-msg")
     private WebElement successMessage;
 
-    //@Step("Se verifica el texto de bienvenida.")
+    @Step("Se verifica el texto de bienvenida.")
     public String getTextFromElement(){
         return successMessage.getText();
     }
