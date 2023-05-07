@@ -2,7 +2,7 @@ package scripts;
 
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pages.MainPage;
+import pages.LanguagePage;
 
 import static org.testng.Assert.assertEquals;
 public class ChangeLanguageTest extends BaseTest{
@@ -13,10 +13,10 @@ public class ChangeLanguageTest extends BaseTest{
 
         driver.get("http://magento-demo.lexiconn.com/");
 
-        MainPage home = new MainPage(driver);
-        home.changeLanguage();
-        home.selectLanguage(language);
-        String pageLanguage = home.getElementText();
+        LanguagePage languagePage = new LanguagePage(driver);
+        languagePage.changeLanguage();
+        languagePage.selectLanguage(language);
+        String pageLanguage = languagePage.getElementText();
         assertEquals(text,
                 pageLanguage.toLowerCase());
     }

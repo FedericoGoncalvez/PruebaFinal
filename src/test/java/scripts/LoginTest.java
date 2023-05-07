@@ -1,34 +1,31 @@
 package scripts;
 
 
-import org.testng.annotations.Parameters;
+import dataProviders.userData;
 import org.testng.annotations.Test;
 import pages.LoginPage;
-import pages.MainPage;
-import pages.MyAccountPage;
+import pages.AccountPage;
 
 import static org.testng.Assert.assertEquals;
 
 
 public class LoginTest extends BaseTest{
-    @Parameters({"email","password","title", "name"})
-
-    @Test
+    @Test(dataProvider = "userData", dataProviderClass = userData.class)
     public void test(String email, String password, String title, String name){
 
 
         driver.get("http://magento-demo.lexiconn.com/");
 
-        MainPage home = new MainPage(driver);
-        LoginPage loginPage = home.enterLoginPage();
-        MyAccountPage myAccountPage = loginPage.enterMyAccount(email,password);
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.accountClick();
+        loginPage.loginClick();
 
-        String getTitle = myAccountPage.getTextToDashboard();
-        String userName = myAccountPage.getName();
+        AccountPage accountPage = loginPage.enterMyAccount(email,password);
+
+        String getTitle = accountPage.getTextToDashboard();
+        String userName = accountPage.getName();
         assertEquals(getTitle, title);
         assertEquals(userName,name);
-
-
 
     }
 

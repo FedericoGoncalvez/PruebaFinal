@@ -3,12 +3,9 @@ package scripts;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import pages.BasePage;
 import pages.LoginPage;
-import pages.MainPage;
-import pages.MyAccountPage;
 import pages.RegisterPage;
-
-import static org.testng.Assert.assertEquals;
 
 public class RegisterTest extends BaseTest{
 
@@ -19,8 +16,10 @@ public class RegisterTest extends BaseTest{
 
 
         driver.get("http://magento-demo.lexiconn.com/");
-        MainPage home = new MainPage(driver);
-        RegisterPage registerPage = home.enterRegisterPage();
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.accountClick();
+        registerPage.registerClick();
+
         registerPage.register(name, lastname, email,password, confirm);
         String actualAdvice = registerPage.assertAdvice();
         String expectedAdvice = "This is a required field.";

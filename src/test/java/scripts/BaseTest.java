@@ -39,9 +39,9 @@ public class BaseTest {
         }
         return image;
     }
-
+*/
     @AfterTest
     public void afterTest(){
         driver.quit();
-    }*/
+    }
 }
