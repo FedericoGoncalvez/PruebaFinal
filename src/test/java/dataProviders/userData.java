@@ -7,7 +7,7 @@ public class userData {
     public static Object[][] getUserData() {
         return new Object[][]{
                 {"xyz@test.com", "123456", "MY DASHBOARD"},
-                {"xyz@test.com", "123456", "MY DASHBOAR"}
+                {"asd@test.com", "123123", "Invalid login or password."}
         };
     }
 }

@@ -1,6 +1,7 @@
 package scripts;
 
 
+import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -24,6 +25,7 @@ public class BaseTest {
 
     }
 
+    @Attachment(type = "image/png")
     @AfterMethod(alwaysRun = true)
     public byte[] takeScreenshot() throws Exception {
         byte[] image = new byte[0];
