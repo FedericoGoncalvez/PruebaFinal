@@ -20,13 +20,13 @@ public class LoginTest extends BaseTest{
         loginPage.accountClick();
         loginPage.loginClick();
 
-        AccountPage accountPage = loginPage.enterMyAccount(email,password);
+        AccountPage accountPage = loginPage.enterAccount(email,password);
         if(loginPage.isPresent()){
-        String getTitle = accountPage.getTextToDashboard();
-        assertEquals(getTitle, expectedText);
-        loginPage.accountClick();
-        accountPage.logoutClick();
-        }
+            String getTitle = accountPage.getTextToDashboard();
+            assertEquals(getTitle, expectedText);
+            loginPage.accountClick();
+            accountPage.logoutClick();
+            }
         else{
             String getError = loginPage.getErrorText();
             assertEquals(getError, expectedText);
