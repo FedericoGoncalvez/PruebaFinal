@@ -1,16 +1,13 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Parametrized test Suite" verbose="1">
-    <!--
+
         <test name="Parametrized Test 1">
-            <parameter name="email" value="xyz@test.com" />
-            <parameter name="password" value="123456" />
-            <parameter name="title" value="MY DASHBOARD" />
-            <parameter name="name" value="Hello, holamundo lasttest!" />
             <classes>
                 <class name="scripts.LoginTest"/>
-        </classes>
+            </classes>
         </test>
 
+    <!--
         <test name="Parametrized Test 2">
             <parameter name="name" value="xyz@test.com" />
             <parameter name="lastname" value="xyz@test.com" />
@@ -29,13 +26,15 @@
                 <class name="scripts.ChangeLanguageTest"/>
             </classes>
         </test>
+
     <test name="Parametrized Test 4">
         <parameter name="textSearch" value="123" />
         <parameter name="textResult" value="Your search returns no results." />
         <classes>
             <class name="scripts.SearchTest"/>
         </classes>
-    </test>-->
+    </test>
+
     <test name="Parametrized Test 5">
         <parameter name="textExpected" value="Retro Chic Eyeglasses was added to your shopping cart." />
         <classes>
@@ -43,5 +42,7 @@
         </classes>
     </test>
 
+
+-->
 </suite>
 
