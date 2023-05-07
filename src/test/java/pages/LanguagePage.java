@@ -9,23 +9,28 @@ public class LanguagePage extends BasePage {
     public LanguagePage(WebDriver driver) {
         super(driver);
     }
+
     @FindBy(id = "select-language")
     private WebElement languageDropbox;
     @FindBy(xpath = "//option[contains(text(), 'French')]")
     private WebElement frenchLanguageOption;
-
     @FindBy(xpath="//label[text()='Votre Langue:']")
     private WebElement labelLangue;
 
+
+
+    //@Step("Se accede a lenguages.")
     public void changeLanguage(){
         languageDropbox.click();
     }
 
+    //@Step("Se selecciona el Frances.")
     public void selectLanguage(String language) {
         if (language.equals("French")) {
             frenchLanguageOption.click();
         }
     }
+    //@Step("Se hace Logout.")
     public String getElementText() {
         return labelLangue.getText();
     }
