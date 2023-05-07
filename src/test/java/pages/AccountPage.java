@@ -18,9 +18,13 @@ public class AccountPage extends BasePage {
     @FindBy(className = "hello")
     private WebElement loginName;
 
+
+
+    //@Step("Se hace Logout.")
     public void logoutClick(){
         logout.click();
     }
+    //@Step("Se extrae la bienvenida.")
     public String getTextToDashboard(){
         return dashboardTitle.getText();
     }

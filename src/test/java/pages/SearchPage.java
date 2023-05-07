@@ -15,10 +15,12 @@ public class SearchPage extends BasePage {
     @FindBy(className = "note-msg")
     private WebElement searchResult;
 
+    //@Step("Se camptura el resultado de la busqueda.")
     public String getText() {
         return searchResult.getText();
     }
 
+    //@Step("Se llena y se hace clic en buscar.")
     public void setSearch(String text) {
         searchInput.sendKeys(text);
         searchButton.click();
