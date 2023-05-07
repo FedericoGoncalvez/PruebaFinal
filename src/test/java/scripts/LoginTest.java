@@ -11,7 +11,7 @@ import static org.testng.Assert.assertEquals;
 
 public class LoginTest extends BaseTest{
     @Test(dataProvider = "userData", dataProviderClass = userData.class)
-    public void test(String email, String password, String title){
+    public void test(String email, String password, String expectedText){
 
 
         driver.get("http://magento-demo.lexiconn.com/");
@@ -23,14 +23,15 @@ public class LoginTest extends BaseTest{
         AccountPage accountPage = loginPage.enterMyAccount(email,password);
         if(loginPage.isPresent()){
         String getTitle = accountPage.getTextToDashboard();
-        assertEquals(getTitle, title);
+        assertEquals(getTitle, expectedText);
         loginPage.accountClick();
         accountPage.logoutClick();
         }
         else{
             String getError = loginPage.getErrorText();
-            assertEquals(getError, title);
+            assertEquals(getError, expectedText);
         }
+
 
 
 
