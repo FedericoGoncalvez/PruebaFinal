@@ -1,6 +1,6 @@
 # Abstracta Academy Automation Test
-Repository for Java-Selenium course final paper.
-
+This is the repository where the work done on automating the [Madison Island Web Site]("http://magento-demo.lexiconn.com/")  website is stored.<br>
+To view the incident report and test cases, please visit the [Documentation]("https://docs.google.com/document/d/1nVKYGukZj16TZxb9e418XQV-ao3QuCl6RahpwZc_uWg/edit?usp=sharing") .
 ## Requeriments
 ### Tools
 [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows)<br>
