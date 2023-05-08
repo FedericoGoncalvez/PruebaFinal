@@ -11,9 +11,7 @@ To view the incident report and test cases, please visit the  [Documentation](ht
 [Allure](https://qameta.io/allure-report/)<br>
 
 ### Execution
-#### To run the tests: <br>
-Execute the following command:<br>
-``mvn clean test`` <br> 
-#### To view the reports: <br>
-Run this command:<br>
-``allure serve allure-results``
+#### To run the tests Execute the following command: <br>
+`mvn clean test` <br> 
+#### To view the reports Run this command: <br>
+`allure serve allure-results`
