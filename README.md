@@ -1,6 +1,6 @@
 # Abstracta Academy Automation Test
-This is the repository where the work done on automating the [Madison Island Website]("http://magento-demo.lexiconn.com/") [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows)<br>
-To view the incident report and test cases, please visit the  [Documentation]("https://docs.google.com/document/d/1nVKYGukZj16TZxb9e418XQV-ao3QuCl6RahpwZc_uWg/edit?usp=sharing") [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows)
+This is the repository where the work done on automating the [Madison Island Website](http://magento-demo.lexiconn.com/)<br>
+To view the incident report and test cases, please visit the  [Documentation](https://docs.google.com/document/d/1nVKYGukZj16TZxb9e418XQV-ao3QuCl6RahpwZc_uWg/edit?usp=sharing) 
 ## Requeriments
 ### Tools
 [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows)<br>
