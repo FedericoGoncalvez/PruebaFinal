@@ -3,8 +3,7 @@ package scripts;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pages.BasePage;
-import pages.LoginPage;
+
 import pages.RegisterPage;
 
 public class RegisterTest extends BaseTest{

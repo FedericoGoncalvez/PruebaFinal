@@ -57,9 +57,6 @@ public class RegisterPage extends BasePage {
         return advice.getText();
     }
 
-
-
-
 }
 
 
