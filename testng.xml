@@ -7,7 +7,7 @@
             </classes>
         </test>
 
-<!--
+
         <test name="Parametrized Test 2">
             <parameter name="name" value="xyz@test.com" />
             <parameter name="lastname" value="xyz@test.com" />
@@ -42,7 +42,7 @@
         </classes>
     </test>
 
--->
+
 
 </suite>
 
