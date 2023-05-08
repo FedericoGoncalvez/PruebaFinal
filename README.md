@@ -8,7 +8,7 @@ To view the incident report and test cases, please visit the  [Documentation](ht
 [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads)<br>
 [Maven](https://maven.apache.org/)<br>
 [TestNG](https://testng.org/doc/download.html)<br>
-[Allure Commandline](https://qameta.io/allure-report/)<br>
+[Allure](https://qameta.io/allure-report/)<br>
 
 ### Execution
 #### To run the tests: <br>
@@ -16,4 +16,4 @@ Execute the following command:<br>
 **mvn clean test** <br> 
 #### To view the reports: <br>
 Run this command:<br>
-**allure serve allure-reports**
+**allure serve allure-results**
