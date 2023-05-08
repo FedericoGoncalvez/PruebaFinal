@@ -3,14 +3,16 @@ package scripts;
 
 import dataProviders.userData;
 import org.testng.annotations.Test;
-import pages.LoginPage;
 import pages.AccountPage;
+import pages.LoginPage;
 
 import static org.testng.Assert.assertEquals;
 
 
 public class LoginTest extends BaseTest{
-    @Test(dataProvider = "userData", dataProviderClass = userData.class)
+
+    @Test(dataProvider = "userData", dataProviderClass = userData.class, description = "[CP-Login-01] Login Test")
+
     public void test(String email, String password, String expectedText){
 
 
@@ -31,10 +33,6 @@ public class LoginTest extends BaseTest{
             String getError = loginPage.getErrorText();
             assertEquals(getError, expectedText);
         }
-
-
-
-
 
     }
 

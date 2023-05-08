@@ -11,7 +11,7 @@ import static org.testng.Assert.assertEquals;
 public class ShoppingCartTest extends BaseTest{
     @Parameters({"textExpected"})
 
-    @Test
+    @Test(description = "[CP-Cart-01] Add item to cart test")
     public void Test(String textExpected){
 
         driver.get("http://magento-demo.lexiconn.com/");

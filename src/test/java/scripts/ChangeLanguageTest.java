@@ -8,7 +8,7 @@ import static org.testng.Assert.assertEquals;
 public class ChangeLanguageTest extends BaseTest{
     @Parameters({"language","text"})
 
-    @Test
+    @Test(description = "[CP-ChangeLanguage-01] Change Languague test")
     public void Test(String language, String text){
 
         driver.get("http://magento-demo.lexiconn.com/");

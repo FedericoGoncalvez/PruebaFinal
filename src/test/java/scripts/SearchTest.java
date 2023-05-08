@@ -10,7 +10,7 @@ public class SearchTest extends BaseTest{
 
     @Parameters({"textSearch", "textResult"})
 
-    @Test
+    @Test(description = "[CP-Search-01] Search item test")
     public void Test(String textSearch, String textResult){
 
         driver.get("http://magento-demo.lexiconn.com/");
