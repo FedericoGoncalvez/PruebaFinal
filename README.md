@@ -15,5 +15,5 @@ To view the incident report and test cases, please visit the  [Documentation](ht
 Execute the following command:<br> 
 **mvn clean test** <br> 
 #### To view the reports: <br>
-Execute these commands:<br>
+Run this command:<br>
 **allure serve allure-reports**
