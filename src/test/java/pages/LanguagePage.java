@@ -25,6 +25,7 @@ public class LanguagePage extends BasePage {
         languageDropbox.click();
     }
 
+
     @Step("Se selecciona el Frances.")
     public void selectLanguage(String language) {
         if (language.equals("French")) {
