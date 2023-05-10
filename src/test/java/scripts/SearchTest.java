@@ -1,12 +1,28 @@
 package scripts;
 
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import io.qameta.allure.Attachment;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.*;
 import pages.SearchPage;
+
+import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
 
-public class SearchTest extends BaseTest{
+public class SearchTest {
+    public static WebDriver driver;
+
+    @BeforeClass
+    public void setUp() throws Exception{
+
+        System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+    }
 
     @Parameters({"textSearch", "textResult"})
 
@@ -19,5 +35,24 @@ public class SearchTest extends BaseTest{
         searchPage.setSearch(textSearch);
         String result = searchPage.getText();
         assertEquals(result, textResult);
+    }
+
+    @Attachment(type = "image/png")
+    @AfterMethod(alwaysRun = true)
+    public byte[] takeScreenshot() throws Exception {
+        byte[] image = new byte[0];
+        try {
+            TakesScreenshot screenshot = (TakesScreenshot) driver;
+            image = screenshot.getScreenshotAs(OutputType.BYTES);
+            System.out.println("Successfully captured a screenshot");
+        } catch (Exception e) {
+            System.out.println("Exception while taking screenshot " + e.getMessage());
+        }
+        return image;
+    }
+
+    @AfterTest
+    public void afterTest(){
+        driver.quit();
     }
 }

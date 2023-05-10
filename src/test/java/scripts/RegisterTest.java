@@ -1,12 +1,29 @@
 package scripts;
 
+import io.qameta.allure.Attachment;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import pages.RegisterPage;
 
-public class RegisterTest extends BaseTest{
+import java.util.concurrent.TimeUnit;
+
+public class RegisterTest {
+
+    public static WebDriver driver;
+
+    @BeforeClass
+    public void setUp() throws Exception{
+
+        System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+    }
 
     @Parameters({"name","lastname","email","password", "confirm"})
 
@@ -24,5 +41,24 @@ public class RegisterTest extends BaseTest{
         String expectedAdvice = "This is a required field.";
         Assert.assertEquals(actualAdvice, expectedAdvice);
 
+    }
+
+    @Attachment(type = "image/png")
+    @AfterMethod(alwaysRun = true)
+    public byte[] takeScreenshot() throws Exception {
+        byte[] image = new byte[0];
+        try {
+            TakesScreenshot screenshot = (TakesScreenshot) driver;
+            image = screenshot.getScreenshotAs(OutputType.BYTES);
+            System.out.println("Successfully captured a screenshot");
+        } catch (Exception e) {
+            System.out.println("Exception while taking screenshot " + e.getMessage());
+        }
+        return image;
+    }
+
+    @AfterTest
+    public void afterTest(){
+        driver.quit();
     }
 }
