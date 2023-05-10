@@ -16,7 +16,7 @@ public class SearchTest {
     public static WebDriver driver;
 
     @BeforeClass
-    public void setUp() throws Exception{
+    public void setUp() {
 
         System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
         driver = new ChromeDriver();
