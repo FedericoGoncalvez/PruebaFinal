@@ -1,12 +1,12 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Parametrized test Suite" verbose="1">
-
+<!--
         <test name="Parametrized Test 1">
             <classes>
                 <class name="scripts.LoginTest"/>
             </classes>
         </test>
-<!--
+
 
         <test name="Parametrized Test 2">
             <parameter name="name" value="xyz@test.com" />
@@ -18,7 +18,7 @@
                 <class name="scripts.RegisterTest"/>
             </classes>
         </test>
-
+-->
         <test name="Parametrized Test 3">
             <parameter name="language" value="French" />
             <parameter name="text" value="votre langue:" />
@@ -27,6 +27,8 @@
             </classes>
         </test>
 
+
+    <!--
     <test name="Parametrized Test 4">
         <parameter name="textSearch" value="123" />
         <parameter name="textResult" value="Your search returns no results." />
@@ -41,8 +43,8 @@
             <class name="scripts.ShoppingCartTest"/>
         </classes>
     </test>
--->
 
+-->
 
 </suite>
 

@@ -21,7 +21,7 @@ public class SearchTest {
         System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
+        driver.get("http://magento-demo.lexiconn.com/");
     }
 
     @Parameters({"textSearch", "textResult"})
@@ -29,7 +29,7 @@ public class SearchTest {
     @Test(description = "[CP-Search-01] Search item test")
     public void Test(String textSearch, String textResult){
 
-        driver.get("http://magento-demo.lexiconn.com/");
+
 
         SearchPage searchPage = new SearchPage(driver);
         searchPage.setSearch(textSearch);

@@ -23,6 +23,7 @@ public class ShoppingCartTest {
         System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.get("http://magento-demo.lexiconn.com/");
 
     }
     @Parameters({"textExpected"})
@@ -30,7 +31,6 @@ public class ShoppingCartTest {
     @Test(description = "[CP-Cart-01] Add item to cart test")
     public void Test(String textExpected){
 
-        driver.get("http://magento-demo.lexiconn.com/");
 
         ProductPage productPage = new ProductPage(driver);
         productPage.selectCatalog();

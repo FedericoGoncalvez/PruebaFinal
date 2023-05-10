@@ -5,10 +5,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.LanguagePage;
 
 import java.util.concurrent.TimeUnit;
@@ -26,17 +23,14 @@ public class ChangeLanguageTest {
         driver.get("http://magento-demo.lexiconn.com/");
     }
     @Parameters({"language","text"})
-
     @Test(description = "[CP-ChangeLanguage-01] Change Languague test")
     public void Test(String language, String text){
-
-
 
         LanguagePage languagePage = new LanguagePage(driver);
         languagePage.changeLanguage();
         languagePage.selectLanguage(language);
-        String pageLanguage = languagePage.getElementText();
-        assertEquals(text, pageLanguage.toLowerCase());
+        String newLanguage = languagePage.getElementText();
+        assertEquals(text, newLanguage.toLowerCase());
     }
 
     @Attachment(type = "image/png")
@@ -52,6 +46,9 @@ public class ChangeLanguageTest {
             throw new RuntimeException(e);
         }
     }
-
+    @AfterTest
+    public void afterTest(){
+        driver.quit();
+    }
 }
 

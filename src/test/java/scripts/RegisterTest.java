@@ -22,7 +22,7 @@ public class RegisterTest {
         System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
+        driver.get("http://magento-demo.lexiconn.com/");
     }
 
     @Parameters({"name","lastname","email","password", "confirm"})
@@ -31,7 +31,7 @@ public class RegisterTest {
     public void test(String name, String lastname, String email, String password, String confirm){
 
 
-        driver.get("http://magento-demo.lexiconn.com/");
+
         RegisterPage registerPage = new RegisterPage(driver);
         registerPage.accountClick();
         registerPage.registerClick();

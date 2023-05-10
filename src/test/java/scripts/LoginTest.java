@@ -29,13 +29,13 @@ public class LoginTest{
         System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
+        driver.get("http://magento-demo.lexiconn.com/");
     }
 
     @Test(dataProvider = "userData", dataProviderClass = userData.class, description = "[CP-Login-01] Login Test")
 
     public void test(String email, String password, String expectedText){
-        driver.get("http://magento-demo.lexiconn.com/");
+
 
         LoginPage loginPage = new LoginPage(driver);
         loginPage.accountClick();
