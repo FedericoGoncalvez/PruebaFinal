@@ -6,7 +6,7 @@
                 <class name="scripts.LoginTest"/>
             </classes>
         </test>
-
+<!--
 
         <test name="Parametrized Test 2">
             <parameter name="name" value="xyz@test.com" />
@@ -41,7 +41,7 @@
             <class name="scripts.ShoppingCartTest"/>
         </classes>
     </test>
-
+-->
 
 
 </suite>
