@@ -44,21 +44,15 @@ public class LoginTest{
         loginPage.loginClick();
 
         AccountPage accountPage = loginPage.enterAccount(email,password);
-        if(loginPage.isPresent()){
-            String getTitle = accountPage.getTextToDashboard();
-            assertEquals(getTitle, expectedText);
-            loginPage.accountClick();
-            accountPage.logoutClick();
-            }
-        else{
-            String getError = loginPage.getErrorText();
-            assertEquals(getError, expectedText);
-        }
+        String getTitle = accountPage.getTextToDashboard();
+        assertEquals(getTitle, expectedText);
+        loginPage.accountClick();
+        accountPage.logoutClick();
 
     }
     @Attachment(type = "image/png")
     @AfterMethod(alwaysRun = true)
-    public byte[] takeScreenshot() throws Exception {
+    public byte[] takeScreenshot() {
         byte[] image = new byte[0];
         try {
             TakesScreenshot screenshot = (TakesScreenshot) driver;
