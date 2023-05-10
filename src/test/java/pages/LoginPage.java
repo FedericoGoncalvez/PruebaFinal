@@ -48,15 +48,7 @@ public class LoginPage extends BasePage {
         return new AccountPage(driver);
     }
 
-    @Step("Se verifica si un elemento existe.")
-    public boolean isPresent() {
-        try {
-            logout.isDisplayed();
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
-    }
+
 
 
 }
