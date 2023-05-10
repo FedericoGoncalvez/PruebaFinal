@@ -28,15 +28,13 @@ public class LoginTest{
 
         System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
 
     @Test(dataProvider = "userData", dataProviderClass = userData.class, description = "[CP-Login-01] Login Test")
 
     public void test(String email, String password, String expectedText){
-
-
         driver.get("http://magento-demo.lexiconn.com/");
 
         LoginPage loginPage = new LoginPage(driver);
@@ -53,16 +51,17 @@ public class LoginTest{
     @Attachment(type = "image/png")
     @AfterMethod(alwaysRun = true)
     public byte[] takeScreenshot() {
-        byte[] image = new byte[0];
         try {
             TakesScreenshot screenshot = (TakesScreenshot) driver;
-            image = screenshot.getScreenshotAs(OutputType.BYTES);
+            byte[] image = screenshot.getScreenshotAs(OutputType.BYTES);
             System.out.println("Successfully captured a screenshot");
+            return image;
         } catch (Exception e) {
             System.out.println("Exception while taking screenshot " + e.getMessage());
+            throw new RuntimeException(e);
         }
-        return image;
     }
+
 
     @AfterTest
     public void afterTest(){

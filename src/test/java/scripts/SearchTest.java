@@ -39,16 +39,16 @@ public class SearchTest {
 
     @Attachment(type = "image/png")
     @AfterMethod(alwaysRun = true)
-    public byte[] takeScreenshot() throws Exception {
-        byte[] image = new byte[0];
+    public byte[] takeScreenshot() {
         try {
             TakesScreenshot screenshot = (TakesScreenshot) driver;
-            image = screenshot.getScreenshotAs(OutputType.BYTES);
+            byte[] image = screenshot.getScreenshotAs(OutputType.BYTES);
             System.out.println("Successfully captured a screenshot");
+            return image;
         } catch (Exception e) {
             System.out.println("Exception while taking screenshot " + e.getMessage());
+            throw new RuntimeException(e);
         }
-        return image;
     }
 
     @AfterTest
